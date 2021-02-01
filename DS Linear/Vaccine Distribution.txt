@@ -1,0 +1,32 @@
+https://www.codechef.com/problems/VACCINE2
+
+#include <bits/stdc++.h>
+#include <vector>
+using namespace std;
+
+int main()
+{
+	int t;
+	cin >> t;
+	while (t--)
+	{
+		int n, d;
+		cin >> n >> d;
+		vector<int> a(n);
+		int r = 0;
+		for (int i = 0; i < n; i++)
+		     {  cin >> a[i];
+		        if (a[i] >= 80 || a[i] <= 9)
+				r++;
+		     }
+    int res= r/d;
+    if(r%d!=0)
+        res++;
+    res+= (n-r)/d;
+    if((n-r)%d)
+        res++;
+    
+	cout << res << endl;
+	}
+	return 0;
+}

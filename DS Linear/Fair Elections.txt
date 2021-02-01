@@ -1,0 +1,46 @@
+https://www.codechef.com/JAN21C/problems/FAIRELCT/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+int t,n,m,sa,sb,flag,count;
+cin>>t;
+while(t--)
+    {   count=0;
+        flag=0;
+        cin>>n>>m;
+        vector <int> a(n);
+        vector <int> b(m);
+        sa=0;
+        sb=0;
+        for(auto it=a.begin();it!=a.end();it++)
+            cin>>*it;
+        for(auto it=b.begin();it!=b.end();it++)
+            cin>>*it;
+        sort(a.begin(),a.end());
+        sort(b.begin(),b.end());
+        sa=accumulate(a.begin(),a.end(),0);
+        sb=accumulate(b.begin(),b.end(),0);
+        while( sa<=sb && (count<m && count<n))
+            {
+            swap(a[0],b[m-1]);
+            count++;
+            sort(a.begin(),a.end());
+            sort(b.begin(),b.end());
+            sa=accumulate(a.begin(),a.end(),0);
+            sb=accumulate(b.begin(),b.end(),0);
+            
+            }
+        if(sa<=sb)
+         flag=-1;
+         
+        if(flag<0)
+            cout<<-1<<endl;
+        else cout<<count<<endl;
+        
+    }
+    
+    
+return 0;
+}

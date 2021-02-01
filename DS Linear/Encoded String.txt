@@ -1,0 +1,25 @@
+https://www.codechef.com/JAN21C/problems/DECODEIT/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{   
+    int t,n,i,sum,j,k;
+    cin>>t;
+    for(k=0;k<t;k++)
+    {   char ch;
+        cin>>n;
+        char s[n];
+        cin>>s;
+        for(i=0,j=0;i<n;i+=4,j++)
+        {
+            sum=((s[i]-'0')*8)+((s[i+1]-'0')*4)+((s[i+2]-'0')*2)+((s[i+3]-'0')*1);
+            ch=(sum+'a');
+            cout<<ch;
+        }
+        cout<<endl;
+    }
+return 0;
+}
