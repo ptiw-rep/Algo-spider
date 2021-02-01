@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+int pi_pos(int arr[],int start, int end)
+{   int r= start + rand() % (end-start+1);
+    if(r!=start)
+        swap(arr[start],arr[r]);
+    int pi=arr[start];
+    int i=start,j=end;
+    while(i<j) 
+    {
+        while(arr[i]<=pi)
+            i++;
+        while(arr[j]>pi)
+            j--;
+        if(i<j)
+            swap(arr[i],arr[j]);
+    }
+swap(arr[j],arr[start]);
+return j;
+}
+void sortq(int arr[],int start,int end)
+{   
+    if(start<end)
+        {
+            int piv=pi_pos(arr,start,end);
+            sortq(arr,start,piv);
+            sortq(arr,piv+1,end);
+        }
+}
+int main()
+{
+int arr[]={50,25,16,92,76,30,43,54,19};
+sortq(arr,0,7);
+for(int i=0;i<8;i++)
+    cout<<arr[i]<<" ";
+return 0;
+}

@@ -1,0 +1,28 @@
+https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/mannas-first-name-4/
+
+#include"stdio.h"
+#include"string.h"
+int main(){
+    int n,i,j,l,p,c1,c2;
+    char s[200];
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        scanf("%s",s);
+        c1=0;
+        c2=0;
+        l=strlen(s)-4;
+        for(j=0;j<=l;j++){
+            if(s[j]=='S' && s[j+1]=='U' && s[j+2]=='V' && s[j+3]=='O'){
+                c1=c1+1;
+            }
+        }
+        p=strlen(s)-7;
+        for(j=0;j<=p;j++){
+            if(s[j]=='S' && s[j+1]=='U' && s[j+2]=='V' && s[j+3]=='O' && s[j+4]=='J' && s[j+5]=='I' && s[j+6]=='T'){
+                c2=c2+1;
+            }
+        }
+        printf("SUVO = %d, SUVOJIT = %d\n",c1-c2,c2);
+    }
+    return 0;
+}

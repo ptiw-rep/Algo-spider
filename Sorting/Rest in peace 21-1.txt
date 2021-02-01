@@ -1,0 +1,40 @@
+https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/rest-in-peace-21-1/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int has(long int x)
+{
+   long int i=10;
+   while(x>0)
+   {
+    if(x%(i*10)==21)
+    {
+        return 1;
+    }
+    x=x/10; 
+   }
+   return 0;
+}
+int main()
+{
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
+int t,f=0;
+cin>>t;
+while(t--)
+    {
+    long int x;
+    cin>>x;
+    if(x%21==0)
+    {   
+        cout<<"The streak is broken!\n";
+    }
+    else if(has(x))
+    {
+        cout<<"The streak is broken!\n";
+    }
+    else cout<< "The streak lives still in our heart!\n";
+    }
+return 0;
+}

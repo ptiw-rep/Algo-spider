@@ -1,0 +1,36 @@
+https://www.hackerearth.com/practice/algorithms/searching/linear-search/practice-problems/algorithm/repeated-k-times/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n,j,i,f;
+    cin>>n;
+    int arr[n];
+    for(i=0;i<n;i++)
+    {
+        cin>>arr[i];
+    }
+    int k;
+    cin>>k;
+    sort(arr,arr+n);
+    for(i=0;i<(n-k+1);i++)
+    {   f=0;
+        for(j=i;j<i+k && f==0 ;j++)
+        {
+            if(arr[j]!=arr[i])
+                {   f=1;
+                    break;
+                }
+        }
+        if(f==0)
+        {
+            cout<<arr[i];
+            break;
+        }
+    }
+    return 0;
+}
