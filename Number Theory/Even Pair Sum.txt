@@ -1,0 +1,38 @@
+https://www.codechef.com/problems/EVENPSUM
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t,i;
+    cin>>t;
+    long long a,b,ae,ao,be,bo,res;
+    for(i=0;i<t;i++)
+        {   
+            cin>>a>>b;
+            if(a%2!=0)
+                {
+                    ae=a/2;
+                    ao=(a/2)+1;
+                }
+            else 
+                {
+                ae=a/2;
+                ao=a/2;
+                }
+            if(b%2!=0)
+                {
+                    be=b/2;
+                    bo=(b/2)+1;
+                }
+            else 
+                {
+                be=b/2;
+                bo=b/2;
+                } 
+        res=(ao*bo)+(ae*be);
+        cout<<res<<endl;
+        }
+    
+    return 0;
+}
